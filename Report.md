@@ -70,22 +70,22 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 
 3. What does `main` do in Java? 
 
-   >The main method is the entry point of a Java application. It must be public, static, return void, and accept a String[] parameter for command-line arguments
+   * The main method is the entry point of a Java application. It must be public, static, return void, and accept a String[] parameter for command-line arguments
 
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-   >The `toString()` method returns a human-readable string that represents an object. Implementing `toString()` in your classes makes debugging and logging easier, as it provides clear information about the object's state.
+   * The `toString()` method returns a human-readable string that represents an object. Implementing `toString()` in your classes makes debugging and logging easier, as it provides clear information about the object's state.
 
 5. What is javadoc style commenting? What is it used for? 
 
-   >Javadoc style commenting uses special `/** ... */` comments in Java to document classes, methods, fields, and other code elements.
+   * Javadoc style commenting uses special `/** ... */` comments in Java to document classes, methods, fields, and other code elements.
    It is used to automatically generate HTML documentation, which helps developers understand, maintain, and use the code effectively.
 
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-   >Test Driven Development (TDD) means writing tests before writing code. You write a failing test, code to pass it, then refactor. This ensures code meets requirements and reduces bugs.    
+   * Test Driven Development (TDD) means writing tests before writing code. You write a failing test, code to pass it, then refactor. This ensures code meets requirements and reduces bugs.    
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
@@ -97,12 +97,12 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
 
-   >Keeping client interaction contained in a single class like `ConsoleView` centralizes all input/output logic. This isolation makes the code easier to maintain, update, or modify the user interface without affecting other parts of the application.
+   * Keeping client interaction contained in a single class like `ConsoleView` centralizes all input/output logic. This isolation makes the code easier to maintain, update, or modify the user interface without affecting other parts of the application.
 
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
-   >To make the application more dynamic, we can store greetings in an external file or a database, allowing updates without code changes. Adding a Language class to manage data and using setter methods in the Greeting class can also improve flexibility.
+   * To make the application more dynamic, we can store greetings in an external file or a database, allowing updates without code changes. Adding a Language class to manage data and using setter methods in the Greeting class can also improve flexibility.
 
 
 > [!IMPORTANT]
