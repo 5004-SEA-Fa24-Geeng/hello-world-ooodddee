@@ -3,7 +3,6 @@ package student;
 /**
  * This class is a place holder which you will fully implement based on the javadoc
  * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
- *
  */
 public class Greeting {
     private int localityID;
@@ -13,11 +12,11 @@ public class Greeting {
     private String formatStr;
 
     /**
-     * @param localityID the unique identifier of the locality
-     * @param localityName the name of the locality
-     * @param asciiGreeting the greeting message in ASCII format
+     * @param localityID      the unique identifier of the locality
+     * @param localityName    the name of the locality
+     * @param asciiGreeting   the greeting message in ASCII format
      * @param unicodeGreeting the greeting message in Unicode format
-     * @param formatStr the format string for generating greetings
+     * @param formatStr       the format string for generating greetings
      */
     public Greeting(int localityID, String localityName, String asciiGreeting, String unicodeGreeting, String formatStr) {
         this.localityID = localityID;
@@ -28,8 +27,8 @@ public class Greeting {
     }
 
     /**
-     * @param localityID the unique identifier of the locality
-     * @param localityName the name of the locality
+     * @param localityID    the unique identifier of the locality
+     * @param localityName  the name of the locality
      * @param asciiGreeting the greeting message in ASCII format
      */
     public Greeting(int localityID, String localityName, String asciiGreeting) {
@@ -37,7 +36,7 @@ public class Greeting {
     }
 
     /**
-     * @param localityID the unique identifier of the locality
+     * @param localityID   the unique identifier of the locality
      * @param localityName the name of the locality
      */
     public Greeting(int localityID, String localityName) {
@@ -76,17 +75,18 @@ public class Greeting {
      * @return the formatted greeting string
      */
     public String getFormatStr() {
-        if(formatStr.contains("%%s")) {
+        if (formatStr.contains("%%s")) {
             return String.format("%%s, %s!", unicodeGreeting);
         }
         return formatStr;
     }
+
     /**
      * @param useAscii {@code true} to use the ASCII greeting, {@code false} to use Unicode
      * @return the formatted greeting string
      */
     public String getFormatStr(boolean useAscii) {
-        if(useAscii) {
+        if (useAscii) {
             return String.format("%%s, %s!", asciiGreeting);
         }
         return getFormatStr();
@@ -97,7 +97,6 @@ public class Greeting {
      */
     @Override
     public String toString() {
-        return String.format("{localityID:%d, localityName:\"%s\", asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}",
-                localityID, localityName, asciiGreeting, unicodeGreeting);
+        return String.format("{localityID:%d, localityName:\"%s\", asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}", localityID, localityName, asciiGreeting, unicodeGreeting);
     }
 }
