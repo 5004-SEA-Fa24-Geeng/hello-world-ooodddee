@@ -34,7 +34,8 @@ public class Greeting {
      * @param unicodeGreeting the greeting message in Unicode format
      * @param formatStr       the format string for generating greetings
      */
-    public Greeting(int localityID, String localityName, String asciiGreeting, String unicodeGreeting, String formatStr) {
+    public Greeting(int localityID, String localityName, String asciiGreeting,
+                    String unicodeGreeting, String formatStr) {
         this.localityID = localityID;
         this.localityName = localityName;
         this.asciiGreeting = asciiGreeting;
