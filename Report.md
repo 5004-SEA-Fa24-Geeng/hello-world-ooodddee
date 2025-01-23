@@ -14,52 +14,44 @@ title: Aloha World UML
 classDiagram
     direction LR
 
-    AlohaWorld --> Greeter : creates
+    AlohaWorld --> Greeter 
     AlohaWorld --> ConsoleView : uses
     ConsoleView --> Greeter : uses
 
     class AlohaWorld {
-        - AlohaWorld()
-        + static void main(String[] args)
+       + main(String[] args) : void
     }
 
     class ConsoleView {
-        - static final Scanner SCANNER
-        - static final List<String> LOCALITY_OPTIONS
+        - SCANNER : Scanner 
+        - LOCALITY_OPTIONS : List
         - ConsoleView()
-        + static String getName()
-        + static int getLocality()
-        + static boolean checkRunAgain()
-        + static void printGreeting(String greeting)
+        + getName() : String
+        + getLocality() : int
+        + checkRunAgain() : boolean
+        + printGreeting(String greeting) : void
     }
 
     class Greeter {
-        - final String name
-        - int locality
-        - static List<String> localityList
-        - static final int HAWAII
-        - static final int CHINA
-        - static final int ITALY
-        - static final int DEFAULT_LOCALITY
-        + Greeter(String name)
-        + Greeter(String name, int locality)
-        + String getName()
-        + int getLocality()
-        + void setLocality(int locality)
-        + String greet()
-        + String greet(boolean asciiOnly)
-        - String getLocalityString()
-        + int hashCode()
-        + boolean equals(Object obj)
-        + String toString()
-        + static List<String> getLocalityList()
+        - name : String
+        - locality : int
+        + getName() : String
+        + getLocality() : int
+        + setLocality(int locality)  : void
+        + greet() : String
+        - getLocalityString() : String
+        + hashCode() : int
+        + equals(Object obj) : boolean
+        + toString() : String
+        + getLocalityList() : List
     }
-
 ```
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
+
+>The AlohaWorld class contains the main method, which controls the program flow by utilizing the ConsoleView class to gather user input. The Greeter class processes this input to generate a greeting message, which is then displayed using ConsoleView.
 
 
 ## Assignment Questions
@@ -73,27 +65,27 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
 
     * The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
-    * In a `switch` statement, the `default` case provides a fallback when none of the specified `case` values match the switch expression. It ensures that there's a defined behavior even if no match is found.
-    * This code reads an entire line of input using `Scanner.nextLine()` and immediately converts the input string to all lowercase letters with `toLowerCase()`. This is useful for case-insensitive comparisons or standardizing user input.
+    * In a `switch` statement, the `default` case provides a fallback when none of the specified `case` values match the switch expression. It ensures that there's a defined behavior even if no match is found.https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextLine--
+    * This code reads an entire line of input using `Scanner.nextLine()` and immediately converts the input string to all lowercase letters with `toLowerCase()`. This is useful for case-insensitive comparisons or standardizing user input. https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#nextLine--
 
 3. What does `main` do in Java? 
 
-   The main method is the entry point of a Java application. It must be public, static, return void, and accept a String[] parameter for command-line arguments
+   >The main method is the entry point of a Java application. It must be public, static, return void, and accept a String[] parameter for command-line arguments
 
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-   The `toString()` method returns a human-readable string that represents an object. Implementing `toString()` in your classes makes debugging and logging easier, as it provides clear information about the object's state.
+   >The `toString()` method returns a human-readable string that represents an object. Implementing `toString()` in your classes makes debugging and logging easier, as it provides clear information about the object's state.
 
 5. What is javadoc style commenting? What is it used for? 
 
-   Javadoc style commenting uses special `/** ... */` comments in Java to document classes, methods, fields, and other code elements.
+   >Javadoc style commenting uses special `/** ... */` comments in Java to document classes, methods, fields, and other code elements.
    It is used to automatically generate HTML documentation, which helps developers understand, maintain, and use the code effectively.
 
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-   Test Driven Development (TDD) means writing tests before writing code. You write a failing test, code to pass it, then refactor. This ensures code meets requirements and reduces bugs.    
+   >Test Driven Development (TDD) means writing tests before writing code. You write a failing test, code to pass it, then refactor. This ensures code meets requirements and reduces bugs.    
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
@@ -104,12 +96,13 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
-   
-   Keeping client interaction contained in a single class like `ConsoleView` centralizes all input/output logic. This isolation makes the code easier to maintain, update, or modify the user interface without affecting other parts of the application.
+
+   >Keeping client interaction contained in a single class like `ConsoleView` centralizes all input/output logic. This isolation makes the code easier to maintain, update, or modify the user interface without affecting other parts of the application.
 
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
+   >To make the application more dynamic, we can store greetings in an external file or a database, allowing updates without code changes. Adding a Language class to manage data and using setter methods in the Greeting class can also improve flexibility.
 
 
 > [!IMPORTANT]
